@@ -25,7 +25,7 @@ function App() {
   return (
     <div className="site-shell min-h-screen w-full max-w-full bg-bg-primary text-text-primary">
       <Navbar />
-      <main className="w-full max-w-full pt-16 sm:pt-20">
+      <main className="w-full max-w-full">
         <LearningPage />
       </main>
       <Footer />
