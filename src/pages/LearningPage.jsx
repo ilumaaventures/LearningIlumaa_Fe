@@ -878,63 +878,69 @@ export default function LearningPage() {
       {/* =========================================================================
           6. WHO CAN APPLY?
          ========================================================================= */}
-      <section className="relative z-10 px-4 sm:px-6 lg:px-8 py-5 sm:py-6 max-w-[1420px] mx-auto">
-        <div className="rounded-3xl border border-slate-200 bg-gradient-to-br from-white via-blue-50/20 to-slate-50 p-4.5 sm:p-6 lg:p-7 shadow-md">
-          <div className="grid gap-5 sm:gap-6 lg:grid-cols-[1fr_0.9fr] lg:items-center">
-            {/* Left: Eligibility Criteria */}
+      <section className="relative z-10 px-3.5 sm:px-6 lg:px-8 py-5 sm:py-6 max-w-[1420px] mx-auto">
+        <div className="grid gap-4 sm:gap-6 lg:grid-cols-[1.12fr_0.88fr] lg:items-stretch">
+          {/* Left: Eligibility Criteria Card */}
+          <div className="rounded-2xl sm:rounded-3xl border border-slate-200/90 bg-white/95 p-4.5 sm:p-6 lg:p-8 shadow-sm flex flex-col justify-between">
             <div>
-              <span className="inline-flex items-center gap-1 rounded-full border border-blue-300 bg-blue-50 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-blue-700">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50/80 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-blue-700">
+                <span className="h-1.5 w-1.5 rounded-full bg-blue-600" />
                 Eligibility & Selection
               </span>
-              <h2 className="section-title mt-1.5 text-xl sm:text-2xl lg:text-3xl text-slate-900">
+              <h2 className="font-heading mt-2 text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-950 tracking-tight">
                 WHO CAN APPLY?
               </h2>
-              <p className="mt-1.5 text-xs sm:text-sm text-slate-600 font-medium">
+              <p className="mt-1 text-xs sm:text-sm text-slate-600 font-medium">
                 These programmes are designed for individuals who:
               </p>
 
-              <div className="mt-3.5 space-y-2">
+              <div className="mt-3.5 sm:mt-4 space-y-2.5">
                 {WHO_CAN_APPLY_ITEMS.map((item, idx) => (
                   <div key={idx} className="flex items-start gap-2.5">
-                    <div className="flex h-4.5 w-4.5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700 mt-0.5">
-                      <Check size={12} strokeWidth={3} />
+                    <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200/80 mt-0.5">
+                      <Check size={12} strokeWidth={2.5} />
                     </div>
-                    <span className="text-[11.5px] sm:text-xs text-slate-700 font-medium leading-relaxed">
+                    <span className="text-xs sm:text-[13px] text-slate-700 font-medium leading-relaxed">
                       {item}
                     </span>
                   </div>
                 ))}
               </div>
             </div>
+          </div>
 
-            {/* Right: Impact Banner Box */}
-            <div className="rounded-2xl bg-gradient-to-br from-slate-950 via-[#0a1835] to-slate-900 p-4.5 sm:p-5 text-white shadow-xl flex flex-col justify-between border border-slate-800">
-              <div>
-                <span className="inline-flex items-center gap-1 rounded-full border border-blue-400/30 bg-blue-950/70 px-2.5 py-0.5 text-[9.5px] font-bold uppercase tracking-wider text-blue-300">
-                  Ready To Transition?
+          {/* Right: Impact Banner / CTA Card */}
+          <div className="relative rounded-2xl sm:rounded-3xl bg-gradient-to-br from-slate-950 via-[#07132a] to-slate-900 p-5 sm:p-6 lg:p-8 text-white shadow-xl flex flex-col justify-between border border-slate-800 overflow-hidden">
+            {/* Ambient Background Glows */}
+            <div className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full bg-blue-500/15 blur-2xl" />
+            <div className="pointer-events-none absolute -left-10 -bottom-10 h-36 w-36 rounded-full bg-cyan-500/15 blur-2xl" />
+
+            <div className="relative z-10">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-400/30 bg-blue-950/70 px-2.5 py-0.5 text-[9.5px] font-bold uppercase tracking-wider text-blue-300">
+                <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                Ready To Transition?
+              </span>
+              <h3 className="font-heading text-lg sm:text-xl lg:text-2xl font-extrabold text-white mt-2.5 leading-snug">
+                You already know the basics.
+                <br />
+                <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-sky-300 bg-clip-text text-transparent">
+                  Now build the experience.
                 </span>
-                <h3 className="font-heading text-lg sm:text-xl font-extrabold text-white mt-2.5 leading-snug">
-                  You already know the basics.
-                  <br />
-                  <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                    Now build the experience.
-                  </span>
-                </h3>
-                <p className="mt-2 text-[11.5px] sm:text-xs text-slate-300 leading-relaxed">
-                  Join a community of ambitious peers and senior industry mentors to elevate your capability into demonstrable professional outputs.
-                </p>
-              </div>
+              </h3>
+              <p className="mt-2 text-xs sm:text-[13px] text-slate-300 leading-relaxed">
+                Join a community of ambitious peers and senior industry mentors to elevate your capability into demonstrable professional outputs.
+              </p>
+            </div>
 
-              <div className="mt-4 pt-3.5 border-t border-slate-800">
-                <button
-                  type="button"
-                  onClick={() => openApplyModal()}
-                  className="shimmer-btn-effect btn-primary w-full justify-center py-2 text-[11px]"
-                >
-                  <span>Apply For Launch Cohort</span>
-                  <ArrowRight size={13} />
-                </button>
-              </div>
+            <div className="relative z-10 mt-5 pt-4 border-t border-slate-800/80">
+              <button
+                type="button"
+                onClick={() => openApplyModal()}
+                className="shimmer-btn-effect w-full inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 px-5 py-2.5 sm:py-3 text-xs sm:text-sm font-bold uppercase tracking-wider text-white shadow-lg shadow-blue-500/25 transition active:scale-95 cursor-pointer"
+              >
+                <span>Apply For Launch Cohort</span>
+                <ArrowRight size={14} />
+              </button>
             </div>
           </div>
         </div>
