@@ -23,25 +23,23 @@ function Navbar() {
 
   const desktopNavItems = useMemo(() => {
     return [
-      { label: "Home", href: mainUrl },
+      { label: "Tech", href: techUrl },
       { label: "Learning", href: "/" },
       { label: "Programmes", href: "#programmes" },
-      { label: "Solutions", href: `${mainUrl}#solutions` },
-      { label: "Tech", href: techUrl },
-      { label: "Connect", href: `${mainUrl}#connect` },
+      { label: "Solutions", href: `${techUrl}#projects` },
+      { label: "Connect", href: `${techUrl}#connect` },
     ];
-  }, [mainUrl, techUrl]);
+  }, [techUrl]);
 
   const mobileNavItems = useMemo(() => {
     return [
-      { label: "Home", href: mainUrl },
+      { label: "Tech", href: techUrl },
       { label: "Learning", href: "/" },
       { label: "Programmes", href: "#programmes" },
-      { label: "Solutions", href: `${mainUrl}#solutions` },
-      { label: "Tech", href: techUrl },
-      { label: "Connect", href: `${mainUrl}#connect` },
+      { label: "Solutions", href: `${techUrl}#projects` },
+      { label: "Connect", href: `${techUrl}#connect` },
     ];
-  }, [mainUrl, techUrl]);
+  }, [techUrl]);
 
   const handleNav = (event, href, isMobile = false) => {
     if (typeof window === "undefined") {
@@ -52,7 +50,7 @@ function Navbar() {
       setIsOpen(false);
     }
 
-    // External link redirect (e.g. https://ilumaa.com or https://tech.ilumaa.com)
+    // External link redirect (e.g. https://tech.ilumaa.com)
     if (href.startsWith("http://") || href.startsWith("https://")) {
       return;
     }
@@ -79,7 +77,7 @@ function Navbar() {
   const handleLogoClick = (event) => {
     if (typeof window === "undefined") return;
     event.preventDefault();
-    window.location.href = mainUrl;
+    window.location.href = techUrl;
   };
 
   return (
@@ -100,7 +98,7 @@ function Navbar() {
     >
       <div className="mx-auto flex w-full max-w-[1520px] items-center justify-between gap-3 px-4 py-2 sm:px-6 sm:py-2.5 lg:px-8">
         <a
-          href={mainUrl}
+          href={techUrl}
           onClick={handleLogoClick}
           className="group flex items-center gap-2 transition hover:opacity-90"
         >
@@ -136,7 +134,7 @@ function Navbar() {
         {/* Desktop CTA */}
         <div className="hidden lg:flex items-center gap-2.5">
           <a
-            href={`${mainUrl}#connect`}
+            href={`${techUrl}#connect`}
             className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-accent-blue to-accent-cyan px-4 py-1.5 text-[10.5px] font-bold uppercase tracking-[0.16em] text-white shadow-[0_3px_10px_rgba(77,124,255,0.25)] transition hover:brightness-105"
           >
             Contact Us
@@ -176,7 +174,7 @@ function Navbar() {
                 </a>
               ))}
               <a
-                href={`${mainUrl}#connect`}
+                href={`${techUrl}#connect`}
                 className="btn-primary mt-1 w-full justify-center py-2.5 text-xs"
               >
                 Contact Us

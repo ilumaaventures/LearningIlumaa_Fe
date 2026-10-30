@@ -14,11 +14,11 @@ function Footer() {
   const mainUrl = getMainUrl();
 
   const quickLinks = [
-    { label: "Home", href: mainUrl },
+    { label: "Tech", href: techUrl },
     { label: "Learning", href: "/" },
     { label: "Programmes", href: "#programmes" },
-    { label: "Tech", href: techUrl },
-    { label: "Connect", href: `${mainUrl}#connect` },
+    { label: "Solutions", href: `${techUrl}#projects` },
+    { label: "Connect", href: `${techUrl}#connect` },
   ];
 
   const chips = [
@@ -35,7 +35,7 @@ function Footer() {
       <div className="mx-auto max-w-[1520px] px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-[1.2fr_0.75fr_0.85fr_0.7fr]">
           <div>
-            <a href={mainUrl} className="inline-block">
+            <a href={techUrl} className="inline-block">
               <img
                 src={logoSrc}
                 alt="ILUMAA"
